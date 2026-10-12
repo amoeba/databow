@@ -503,3 +503,28 @@ fn test_invalid_output_extension_fails_before_connect() {
     assert!(stderr.contains("invalid value 'out.xyz' for '--output <file>'"));
     assert!(stderr.contains("Unsupported file extension"));
 }
+
+#[test]
+fn test_blank_query_with_output_fails_before_connect() {
+    let dir = tempfile::tempdir().unwrap();
+    let out = dir.path().join("out.csv");
+    let output = Command::new("cargo")
+        .args([
+            "run",
+            "--",
+            "--driver",
+            "nonexistent_driver",
+            "--query",
+            "  ",
+            "--output",
+        ])
+        .arg(&out)
+        .output()
+        .expect("Failed to execute command");
+
+    assert!(!output.status.success());
+    let stderr = String::from_utf8_lossy(&output.stderr);
+    // Rejected before trying to load the (nonexistent) driver.
+    assert!(stderr.contains("No query to execute"), "stderr: {stderr}");
+    assert!(!out.exists());
+}

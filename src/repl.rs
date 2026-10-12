@@ -89,7 +89,7 @@ pub fn run_repl(mut connection: impl Connection, table_mode: TableMode) {
 
                 let sql = buffer.trim_end().trim_end_matches(';');
                 let batches = match database::execute_query(&mut connection, sql) {
-                    Ok(batches) => batches,
+                    Ok(result) => result.batches,
                     Err(err) => {
                         eprintln!("{err}");
                         continue;

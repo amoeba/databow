@@ -14,6 +14,7 @@
 - Add presto example (#31)
 - Add cassandra example
 - Add druid example
+- Add firebolt example
 
 ### ⚙️ Miscellaneous Tasks
 

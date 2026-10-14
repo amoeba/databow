@@ -120,7 +120,7 @@ dbc install postgresql
 Connect to CedarDB:
 
 ```sh
-databow --driver postgresql --uri postgresql://postgres:test@localhost:5432/postgres --statement-option adbc.postgresql.use_copy=false
+databow --driver postgresql --uri postgresql://postgres:test@localhost:5432/postgres
 ```
 
 ## chDB

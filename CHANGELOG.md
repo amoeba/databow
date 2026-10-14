@@ -1,5 +1,10 @@
 ## [unreleased]
 
+### 📚 Documentation
+
+- Remove use_copy option from CedarDB example
+## [0.2.0] - 2026-10-14
+
 ### 🚀 Features
 
 - Infer driver from URI scheme (#29)

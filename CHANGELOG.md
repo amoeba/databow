@@ -23,6 +23,7 @@
 ### ⚙️ Miscellaneous Tasks
 
 - Limit pypi workflow to release and manual dispatch triggers
+- Bump version to 0.2.0
 ## [0.1.2] - 2026-07-08
 
 ### 🐛 Bug Fixes

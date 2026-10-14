@@ -109,6 +109,20 @@ Connect to BigQuery:
 databow --driver bigquery --option adbc.bigquery.sql.project_id=my-gcp-project --option adbc.bigquery.sql.dataset_id=bigquery-public-data
 ```
 
+## CedarDB
+
+Install the PostgreSQL driver with dbc:
+
+```sh
+dbc install postgresql
+```
+
+Connect to CedarDB:
+
+```sh
+databow --driver postgresql --uri postgresql://postgres:test@localhost:5432/postgres --statement-option adbc.postgresql.use_copy=false
+```
+
 ## chDB
 
 Install the chDB driver with dbc:
@@ -155,6 +169,34 @@ Connect to ClickHouse:
 
 ```sh
 databow --driver clickhouse --uri http://localhost:8123 --username user --password pass
+```
+
+## CockroachDB
+
+Install the PostgreSQL driver with dbc:
+
+```sh
+dbc install postgresql
+```
+
+Connect to CockroachDB:
+
+```sh
+databow --driver postgresql --uri postgresql://username:password@localhost:26257/db --statement-option adbc.postgresql.use_copy=false
+```
+
+## CrateDB
+
+Install the PostgreSQL driver with dbc:
+
+```sh
+dbc install postgresql
+```
+
+Connect to CrateDB:
+
+```sh
+databow --driver postgresql --uri postgresql://crate@localhost:5432/crate --statement-option adbc.postgresql.use_copy=false
 ```
 
 ## Databricks
@@ -205,6 +247,34 @@ Connect to DuckDB (persistent):
 databow --driver duckdb --option path=data.db
 ```
 
+## DuckDB Quack server
+
+Install the Quack driver with dbc:
+
+```sh
+dbc install --pre quack
+```
+
+Connect to a DuckDB Quack server:
+
+```sh
+databow --driver quack --uri 'quack://localhost:9494/?token=<AUTH_TOKEN>'
+```
+
+## Exasol
+
+Install the Exasol driver with dbc:
+
+```sh
+dbc install exasol
+```
+
+Connect to Exasol:
+
+```sh
+databow --driver exasol --uri 'exasol://sys:exasol@localhost:9563/?tls=true&validateservercertificate=0'
+```
+
 ## Firebolt
 
 Install the Firebolt driver with dbc:
@@ -245,6 +315,20 @@ Connect to GreptimeDB:
 
 ```sh
 databow --driver mysql --uri 'root:@tcp(localhost:4002)/public'
+```
+
+## InfluxDB
+
+Install the Arrow Flight SQL driver with dbc:
+
+```sh
+dbc install flightsql
+```
+
+Connect to InfluxDB:
+
+```sh
+databow --driver flightsql --uri grpc+tcp://localhost:8181 --option 'adbc.flight.sql.authorization_header=Bearer <AUTH_TOKEN>' --option adbc.flight.sql.rpc.call_header.database=_internal
 ```
 
 ## MariaDB
@@ -385,6 +469,20 @@ Connect to Presto:
 
 ```sh
 databow --driver presto --uri presto://user@localhost:8080/tpch/tiny
+```
+
+## Sail
+
+Install the Arrow Flight SQL driver with dbc:
+
+```sh
+dbc install flightsql
+```
+
+Connect to Sail:
+
+```sh
+databow --driver flightsql --uri grpc://localhost:32010
 ```
 
 ## SingleStore

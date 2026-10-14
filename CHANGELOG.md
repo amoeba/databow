@@ -15,6 +15,7 @@
 - Add cassandra example
 - Add druid example
 - Add firebolt example
+- Fix broken links from tutorial to reference page (#42)
 
 ### ⚙️ Miscellaneous Tasks
 

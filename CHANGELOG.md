@@ -5,6 +5,7 @@
 - Infer driver from URI scheme (#29)
 - Show info on repl startup (#27)
 - Add JSON lines, Arrow IPC stream, and Parquet output formats (#26)
+- Add dot commands, result truncation and pager to repl (#36)
 
 ### 📚 Documentation
 

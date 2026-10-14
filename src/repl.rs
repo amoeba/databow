@@ -7,6 +7,7 @@ use crate::highlighter::SyntectHighlighter;
 use crate::pager::PagerSettings;
 use crate::table::{RenderOptions, TableMode, TruncationOptions};
 use adbc_core::Connection;
+use adbc_core::options::{OptionStatement, OptionValue};
 use reedline::{
     Prompt, PromptEditMode, PromptHistorySearch, Reedline, Signal, ValidationResult, Validator,
 };
@@ -74,6 +75,7 @@ pub fn run_repl(
     mut connection: impl Connection,
     table_mode: TableMode,
     truncation: TruncationOptions,
+    statement_options: &[(OptionStatement, OptionValue)],
 ) {
     let vendor = database::get_vendor_info(&connection);
     println!("{}", format_banner(env!("CARGO_PKG_VERSION"), &vendor));
@@ -113,7 +115,8 @@ pub fn run_repl(
                 // Free the previous result before running the next query so
                 // two full results are never held at once.
                 state.last_result = None;
-                let batches = match database::execute_query(&mut connection, sql) {
+                let batches = match database::execute_query(&mut connection, sql, statement_options)
+                {
                     Ok(result) => result.batches,
                     Err(err) => {
                         eprintln!("{err}");

@@ -3,6 +3,7 @@
 ### 📚 Documentation
 
 - Remove use_copy option from CedarDB example
+- Add Materialize example
 ## [0.2.0] - 2026-10-14
 
 ### 🚀 Features

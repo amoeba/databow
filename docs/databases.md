@@ -345,6 +345,20 @@ Connect to MariaDB:
 databow --driver mysql --uri 'root:my-secret-pw@tcp(localhost:3306)/sys'
 ```
 
+## Materialize
+
+Install the PostgreSQL driver with dbc:
+
+```sh
+dbc install postgresql
+```
+
+Connect to Materialize:
+
+```sh
+databow --driver postgresql --uri postgresql://materialize@localhost:6875/materialize --statement-option adbc.postgresql.use_copy=false
+```
+
 ## Microsoft SQL Server
 
 Install the Microsoft SQL Server driver with dbc:

@@ -9,6 +9,8 @@
 ### ⚙️ Miscellaneous Tasks
 
 - Harden GitHub Actions workflows with zizmor (#39)
+- Add ignore paths
+- Bump GitHub Actions to latest pinned versions
 ## [0.2.0] - 2026-10-14
 
 ### 🚀 Features

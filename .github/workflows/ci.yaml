@@ -5,7 +5,19 @@ name: continuous-integration
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "docs/**"
+      - "overrides/**"
+      - "**.md"
+      - zensical.toml
+      - .github/workflows/docs.yaml
   pull_request:
+    paths-ignore:
+      - "docs/**"
+      - "overrides/**"
+      - "**.md"
+      - zensical.toml
+      - .github/workflows/docs.yaml
 permissions:
   contents: read
 jobs:

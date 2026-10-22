@@ -4,6 +4,7 @@
 
 - Remove use_copy option from CedarDB example
 - Add Materialize example
+- Add XTDB example (#46)
 ## [0.2.0] - 2026-10-14
 
 ### 🚀 Features

@@ -289,20 +289,6 @@ Connect to Firebolt:
 databow --driver firebolt --uri 'firebolt://localhost:3473?ssl_mode=disable'
 ```
 
-## GizmoSQL
-
-Install the Arrow Flight SQL driver with dbc:
-
-```sh
-dbc install flightsql
-```
-
-Connect to GizmoSQL:
-
-```sh
-databow --driver flightsql --uri grpc+tcp://localhost:31337 --username gizmosql_user --password gizmosql_password
-```
-
 ## GreptimeDB
 
 Install the MySQL driver with dbc:

@@ -5,6 +5,7 @@
 - Remove use_copy option from CedarDB example
 - Add Materialize example
 - Add XTDB example (#46)
+- Remove GizmoSQL example
 
 ### ⚙️ Miscellaneous Tasks
 

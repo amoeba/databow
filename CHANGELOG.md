@@ -6,6 +6,7 @@
 - Add Materialize example
 - Add XTDB example (#46)
 - Remove GizmoSQL example
+- Remove --pre from dbc install quack (#47)
 
 ### ⚙️ Miscellaneous Tasks
 
